@@ -1,0 +1,1 @@
+include ':app', ':module_mine', ':module_settings', ':module_home', ':module_goods'

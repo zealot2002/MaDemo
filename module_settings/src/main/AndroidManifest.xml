@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.credithc.module_settings">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+
+        <service
+            android:name=".ama.SettingsRouterConnectService"
+            android:process=":settings" />
+
+        <activity
+            android:name=".view.SettingsActivity"
+            android:process=":settings"/>
+
+    </application>
+
+</manifest>

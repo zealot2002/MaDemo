@@ -33,7 +33,7 @@ public class GoodsPresenter implements GoodsContract.Presenter{
             @Override
             public void requestCallback(int result, final Object data, Object tagData) {
                 view.closeLoading();
-                if (result == HttpConstant.SUCCESS) {
+                if (result == com.credithc.module_goods.constant.HttpConstant.SUCCESS) {
                     view.refreshGoodsList((List<GoodsBean>) data);
                 } else {
                     view.showError(data.toString());

@@ -1,12 +1,12 @@
 package com.credithc.module_goods.model;
 
-import com.credithc.module_goods.constant.HttpConstant;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.zzy.aframwork.network.HttpUtil;
+import org.zzy.aframwork.network.util.HttpConstant;
 import org.zzy.aframwork.network.util.HttpInterface;
 import org.zzy.aframwork.network.util.NetDataInvalidException;
 import org.zzy.aframwork.network.util.RequestCtx;
@@ -22,10 +22,8 @@ import java.util.List;
 public class DataProvider {
     public static void getGoodsList(HttpInterface.DataCallback callback) {
         LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
-        map.put("page","1");
-        map.put("pageSize","10");
 
-        String url = HttpConstant.SERVER_URL + HttpConstant.GET_GOODS_LIST;
+        String url = com.credithc.module_goods.constant.HttpConstant.SERVER_URL + "/"+com.credithc.module_goods.constant.HttpConstant.GET_GOODS_LIST;
         RequestCtx ctx = new RequestCtx.Builder(map)
                 .methodAndUrl(HttpConstant.HTTP_METHOD_GET, url)
                 .callback(callback)
@@ -44,7 +42,7 @@ public class DataProvider {
             List<GoodsBean> dataList = new ArrayList<>();
             JSONTokener jsonParser = new JSONTokener(str);
             JSONObject obj = (JSONObject) jsonParser.nextValue();
-            int errno = obj.getInt("err");
+            int errno = obj.getInt("errorCode");
             if (errno == 0) {
                 JSONArray goodsList = obj.getJSONArray("data");
                 for (int i = 0; i < goodsList.length(); i++) {
@@ -55,7 +53,7 @@ public class DataProvider {
                     dataList.add(bean);
                 }
             } else {
-                String msg = obj.getString("msg");
+                String msg = obj.getString("errorMessage");
                 return new Object[]{HttpConstant.FAIL,msg};
             }
             return new Object[]{HttpConstant.SUCCESS,dataList};

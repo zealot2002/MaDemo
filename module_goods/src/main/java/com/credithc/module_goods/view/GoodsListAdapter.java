@@ -19,7 +19,6 @@ public class GoodsListAdapter extends BaseQuickAdapter<GoodsBean, BaseViewHolder
     @Override
     protected void convert(BaseViewHolder helper, GoodsBean item) {
         helper.setText(R.id.tvName,item.getName());
-        helper.setText(R.id.tvPrice,item.getPrice());
+        helper.setText(R.id.tvPrice,item.getPrice()+"");
     }
-
 }

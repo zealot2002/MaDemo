@@ -1,0 +1,17 @@
+{
+  "goodsList": {
+    "errorCode":0,
+    "errorMessage":"success",
+    "data":[
+      {"name":"西红柿鸡蛋汤","price":22},
+      {"name":"红烧肉","price":33},
+      {"name":"水煮鱼","price":44}
+    ]
+  }
+
+  ,
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}

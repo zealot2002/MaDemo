@@ -11,10 +11,7 @@ public class GoodsBean implements Serializable {
 
     private String id;
     private String name;// 名称
-    private String efficiency;// 功效
-    private Integer duration;// 时长：单位：分钟
     private Integer price;// 现价
-    private String imageUrl;
 
     public String getId() {
         return id;
@@ -32,22 +29,6 @@ public class GoodsBean implements Serializable {
         this.name = name;
     }
 
-    public String getEfficiency() {
-        return efficiency;
-    }
-
-    public void setEfficiency(String efficiency) {
-        this.efficiency = efficiency;
-    }
-
-    public Integer getDuration() {
-        return duration;
-    }
-
-    public void setDuration(Integer duration) {
-        this.duration = duration;
-    }
-
     public Integer getPrice() {
         return price;
     }
@@ -56,11 +37,4 @@ public class GoodsBean implements Serializable {
         this.price = price;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
 }
